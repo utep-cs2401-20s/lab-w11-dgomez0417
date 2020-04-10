@@ -32,14 +32,14 @@ public class newSorting {
     }
     private int partition(int[] A, int L, int R){
         int pivot = A[L]; // is the start of the array
-        int less = L +1;
-        int more = R;
+        int less = L +1; // start at the index next to the pivot
+        int more = R; // right side
 
         while(less < more) {
-            while (more > L && A[more] >= pivot) { // checking
+            while (more > L && A[more] >= pivot) { // comparing the right side to the left side
                 more--;
             }
-            while (less <= R && A[less] <= pivot) {
+            while (less <= R && A[less] <= pivot) { // comparing the left side to the right side
                 less++;
             }
             if (less < more) { // same as the while loop will start the swapping
